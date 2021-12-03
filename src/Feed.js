@@ -16,7 +16,13 @@ function Feed() {
                 username='etanderson'
                 image='https://upload.wikimedia.org/wikipedia/commons/4/47/Environmental_disaster_in_Levikha_Village%2C_Sverdlovsk_region_of_Russia_DJI.jpg'
             />
-            <Post />
+            <Post 
+                profilePic='https://avatars.githubusercontent.com/u/2357717?v=4'
+                message='Rochelle is the greatest!'
+                timestamp='Timestamp: forever and always'
+                username='etanderson'
+                image='https://upload.wikimedia.org/wikipedia/commons/0/03/Milky_way_seen_from_bolivian_high_altiplano_03.jpg'
+            />
             <Post />
         </div>
     )
