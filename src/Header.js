@@ -22,7 +22,7 @@ function Header() {
                 />
             <div className="header__input">
                 <SearchIcon />
-                <input placeholder="Search Facebook" type='text' /> 
+                <input placeholder="Search Facebook-Clone" type='text' /> 
             </div>
             <div className='header__center'>
                 <div className="header__option header__option--active">
