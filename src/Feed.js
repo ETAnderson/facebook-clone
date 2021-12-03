@@ -3,8 +3,8 @@ import './Feed.css'
 
 function Feed() {
     return (
-        <div>
-            
+        <div className='feed'>
+            {/* Story */}
         </div>
     )
 }
