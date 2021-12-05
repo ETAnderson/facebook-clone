@@ -17,11 +17,11 @@ function App() {
       <Login />
       ) : (
         <>
-        <div className="app__body">
-          <Sidebar />
-          <Feed />
-          <Widgets />
-        </div>
+          <div className="app__body">
+            <Sidebar />
+            <Feed />
+            <Widgets />
+          </div>
         </>
         )}
     </div>
