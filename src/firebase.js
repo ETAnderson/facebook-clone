@@ -13,6 +13,7 @@ const firebaseConfig = {
     measurementId: "G-K5919TF19B"
   };
 
+ // eslint-disable-next-line
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore();
 const auth = getAuth()

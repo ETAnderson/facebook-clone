@@ -1,29 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Feed.css'
 import MessageSender from './MessageSender'
 import Post from './Post'
 import StoryReel from './StoryReel'
+import db from './firebase'
 
 function Feed() {
+    const [posts, setPosts] = useState([]);
+
+    // useEffect(() => {
+    //     db.collection('posts').onSnapshot(snapshot => {
+    //         setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.dtat()})))
+    //     })
+        // return () => {
+        //     cleanup
+        // }
+    // }, [])
+    
     return (
         <div className='feed'>
             <StoryReel />
             <MessageSender />
-            <Post 
-                profilePic='https://avatars.githubusercontent.com/u/2357717?v=4'
-                message='Wow this works!'
-                timestamp='This is a timestamp'
-                username='etanderson'
-                image='https://upload.wikimedia.org/wikipedia/commons/4/47/Environmental_disaster_in_Levikha_Village%2C_Sverdlovsk_region_of_Russia_DJI.jpg'
-            />
-            <Post 
-                profilePic='https://avatars.githubusercontent.com/u/2357717?v=4'
-                message='Rochelle is the greatest!'
-                timestamp='Timestamp: forever and always'
-                username='etanderson'
-                image='https://upload.wikimedia.org/wikipedia/commons/0/03/Milky_way_seen_from_bolivian_high_altiplano_03.jpg'
-            />
-            <Post />
+            
+            {posts.map(post => {
+                <Post 
+                    key={post.id}
+                    profilePic={post.profilePic}
+                    message={post.message}
+                    timestamp={post.timestamp}
+                    username={post.username}
+                    image={post.image}
+                />
+            })}
         </div>
     )
 }

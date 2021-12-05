@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
+import Login from './Login';
 import Feed from './Feed';
 import Header from './Header';
-import Login from './Login';
 import Sidebar from './Sidebar';
 import { useStateValue } from './StateProvider';
 import Widgets from './Widgets';
@@ -13,11 +13,11 @@ function App() {
   return (
     // BEM naming convention
     <div className="app">
-     <Header />
       {!user ?  (
         <Login />
       ) : (
         <>
+        <Header />
           <div className="app__body">
             <Sidebar />
             <Feed />
