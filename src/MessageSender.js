@@ -5,16 +5,32 @@ import VideocamIcon from '@material-ui/icons/Videocam'
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import { useStateValue } from './StateProvider';
+import db from './firebase'
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+
+
+
 
 function MessageSender() {
     const [input, setInput] = useState('');
     const [imageUrl, setImageUrl] =  useState('');
+    // eslint-disable-next-line
     const  [{ user }, dispatch] = useStateValue();
+
 
     const handleSubmit = e => {
         e.preventDefault();
 
         // some clever db stuff
+        // eslint-disable-next-line
+        const docRef = addDoc(collection(db, 'posts'), {
+            message: input,
+            timestamp: Timestamp.now(),
+            profilePic: user.photoURL,
+            username: user.displayName,
+            image: imageUrl,
+
+        });
         
         setInput('');
         setImageUrl('');

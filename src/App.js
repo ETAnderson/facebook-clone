@@ -9,6 +9,7 @@ import Widgets from './Widgets';
 
 
 function App() {
+  // eslint-disable-next-line
   const  [{ user }, dispatch] = useStateValue();
   return (
     // BEM naming convention

@@ -4,13 +4,13 @@ import MessageSender from './MessageSender'
 import Post from './Post'
 import StoryReel from './StoryReel'
 import db from './firebase'
-import { collection, onSnapshot, query } from "firebase/firestore"; 
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore"; 
 
 function Feed() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        const q = query(collection(db, 'posts'))
+        const q = query(collection(db, 'posts'), orderBy("timestamp", "desc"));
         // eslint-disable-next-line
         const unsub = onSnapshot(q, (snapshot) => {
             setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data()})))

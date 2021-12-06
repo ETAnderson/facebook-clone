@@ -11,6 +11,7 @@ import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
 import { useStateValue } from './StateProvider';
 
 function Sidebar() {
+    // eslint-disable-next-line
     const  [{ user }, dispatch] = useStateValue();
 
     return (
