@@ -33,6 +33,8 @@ function Login() {
                     src='https://upload.wikimedia.org/wikipedia/commons/8/89/Facebook_Logo_%282019%29.svg'
                     alt=''
                 />
+                <h1>Clone</h1>
+                <h2>For Demonstration Purposes</h2>
             </div>
             <Button type="submit" onClick={signIn} >
                 Sign In
